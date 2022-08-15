@@ -50,7 +50,7 @@ export default {
         },
         {
           key: "phone",
-          label: "Email",
+          label: "SĐT",
           sortable: true,
         },
 
@@ -187,7 +187,7 @@ export default {
                 </template>
 
                 <template v-slot:cell(username)="data">
-                  {{ data.item.id }}
+                  {{ data.item.gmail }}
                 </template>
 
                 <template v-slot:cell(phone)="data">
