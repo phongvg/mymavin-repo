@@ -1,0 +1,60 @@
+{
+  "navbar": {
+    "search": {
+      "text": "Tìm kiếm..."
+    },
+    "dropdown": {
+      "notification": {
+        "badge": "5",
+        "text": "Thông Báo",
+        "subtext": "Xóa tất cả",
+        "1": {
+          "title": "Doug Dukes commented on Admin Dashboard",
+          "text": "1 min ago"
+        },
+        "2": {
+          "title": "Mario Drummond",
+          "text": "Hi, How are you? What about our next meeting"
+        },
+        "3": {
+          "title": "Karen Robinson",
+          "text": "Wow ! this admin looks good and awesome design"
+        },
+        "4": {
+          "title": "New user registered.",
+          "text": "5 hours ago"
+        },
+        "5": {
+          "title": "Caleb Flakelar commented on Admin",
+          "text": "4 days ago"
+        },
+        "6": {
+          "title": "Carlos Crouch liked",
+          "text": "13 days ago"
+        },
+        "button": "Xem tất cả"
+      },
+      "name": {
+        "text": "Admin",
+        "list": {
+          "greet": "Xin chào!",
+          "account": "Tài khoản",
+          "settings": "Cài đặt",
+          "logout": "Đăng xuất"
+        }
+      }
+    }
+  },
+  "menuitems": {
+    "navigation": {
+      "text": "ĐIỀU HƯỚNG"
+    },
+    "dashboard": {
+      "text": "Quản trị",
+      "list": {
+        "news": "Tin tức",
+        "users": "Người dùng"
+      }
+    }
+  }
+}
