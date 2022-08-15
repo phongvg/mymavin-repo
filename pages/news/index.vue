@@ -24,59 +24,7 @@ export default {
           active: true,
         },
       ],
-      productData: [],
-      totalRows: 1,
-      currentPage: 1,
-      perPage: 10,
-      pageOptions: [10, 25, 50, 100],
-      filter: null,
-      filterOn: [],
-      sortBy: "age",
-      sortDesc: false,
-      fields: [
-        {
-          key: "check",
-          label: "",
-        },
-        {
-          key: "Product",
-          label: "Bài viết",
-        },
-        {
-          key: "category",
-          label: "Chủ đề",
-        },
-        {
-          key: "date",
-          label: "Ngày tạo",
-          sortable: true,
-        },
-        {
-          key: "createdBy",
-          label: "Người tạo",
-        },
-        {
-          key: "Rating",
-          label: "Rating",
-          sortable: true,
-        },
-        {
-          key: "quality",
-          label: "Lượt bình luận",
-          sortable: true,
-        },
-        {
-          key: "status",
-          label: "Trạng thái",
-          sortable: true,
-        },
-        "action",
-      ],
-    };
-  },
-  created() {
-    setTimeout(() => {
-      this.productData = [
+      productData: [
         {
           id: 1,
           image: require("~/assets/images/news/news-1.png"),
@@ -132,8 +80,55 @@ export default {
           quality: 38,
           status: "Deactive",
         },
-      ];
-    }, 100);
+      ],
+      totalRows: 1,
+      currentPage: 1,
+      perPage: 10,
+      pageOptions: [10, 25, 50, 100],
+      filter: null,
+      filterOn: [],
+      sortBy: "age",
+      sortDesc: false,
+      fields: [
+        {
+          key: "check",
+          label: "",
+        },
+        {
+          key: "Product",
+          label: "Bài viết",
+        },
+        {
+          key: "category",
+          label: "Chủ đề",
+        },
+        {
+          key: "date",
+          label: "Ngày tạo",
+          sortable: true,
+        },
+        {
+          key: "createdBy",
+          label: "Người tạo",
+        },
+        {
+          key: "Rating",
+          label: "Rating",
+          sortable: true,
+        },
+        {
+          key: "quality",
+          label: "Lượt bình luận",
+          sortable: true,
+        },
+        {
+          key: "status",
+          label: "Trạng thái",
+          sortable: true,
+        },
+        "action",
+      ],
+    };
   },
   computed: {
     /**
