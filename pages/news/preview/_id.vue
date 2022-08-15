@@ -89,7 +89,7 @@ export default {
         <div class="card">
           <div class="card-body">
             <!-- <p class="text-primary">#MN2048</p> -->
-            <nuxt-link to="/news/create" class="btn btn-danger mb-2"
+            <nuxt-link to="#" class="btn btn-danger mb-2"
               ><i class="mdi mdi-checkbox-marked-circle mr-1"></i>Duyệt tin
             </nuxt-link>
             <h4 class="mb-1">{{ productDetail.name }}</h4>

@@ -114,7 +114,7 @@ export default {
                 </nuxt-link>
                 <nuxt-link to="/news/create" class="btn btn-danger mb-2"
                   ><i class="mdi mdi-checkbox-marked-circle mr-1"></i>Duyệt
-                  nhanh
+                  nhiều
                 </nuxt-link>
               </div>
 

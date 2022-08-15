@@ -108,7 +108,7 @@ export default {
       <div class="col-lg-12">
         <div class="card">
           <div class="card-body">
-            <form-wizard color="#00559a" ref="wizard">
+            <form>
               <h4 class="header-title">Thông tin chung</h4>
 
               <div>
@@ -323,7 +323,12 @@ export default {
                   ></textarea>
                 </div>
               </form> -->
-            </form-wizard>
+              <div class="form-group text-right m-b-0" style="margin-top: 20px">
+                <button class="btn btn-primary" type="submit">
+                  Sửa bài viết
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

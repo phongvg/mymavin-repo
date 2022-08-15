@@ -1,5 +1,5 @@
 <script>
-import { usersData } from "./data";
+import { usersData } from "./data.js";
 /**
  * Customers component
  */
@@ -101,12 +101,14 @@ export default {
           <div class="card-body">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <nuxt-link
-                  to="/ecommerce/product-create"
-                  class="btn btn-success mb-2"
+                <nuxt-link to="/users/create" class="btn btn-success mb-2"
                   ><i class="mdi mdi-plus-circle mr-1"></i>Tạo tài
                   khoản</nuxt-link
                 >
+                <nuxt-link to="#" class="btn btn-danger mb-2"
+                  ><i class="mdi mdi-checkbox-marked-circle mr-1"></i>Duyệt
+                  nhiều
+                </nuxt-link>
               </div>
               <!-- <div class="col-sm-6">
                 <div class="float-sm-right">
@@ -227,22 +229,27 @@ export default {
                           data.item.name
                         }}</a>
                       </h5>
-                      <p class="mb-0 font-13">ID : {{ data.item.id }}</p>
+                      <p class="mb-0 font-13">
+                        Tài khoản : {{ data.item.username }}
+                      </p>
                     </div>
                   </div>
                 </template>
 
-                <template v-slot:cell(action)>
+                <template v-slot:cell(action)="data">
                   <ul class="list-inline table-action m-0">
-                    <li class="list-inline-item">
+                    <!-- <li class="list-inline-item">
                       <a href="javascript:void(0);" class="action-icon">
                         <i class="mdi mdi-eye"></i
                       ></a>
-                    </li>
+                    </li> -->
                     <li class="list-inline-item">
-                      <a href="javascript:void(0);" class="action-icon">
+                      <nuxt-link
+                        :to="`/users/user-details/${data.item.id}`"
+                        class="action-icon"
+                      >
                         <i class="mdi mdi-square-edit-outline"></i
-                      ></a>
+                      ></nuxt-link>
                     </li>
                     <li class="list-inline-item">
                       <a href="javascript:void(0);" class="action-icon">

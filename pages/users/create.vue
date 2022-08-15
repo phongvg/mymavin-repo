@@ -1,10 +1,5 @@
 <script>
-import { FormWizard, TabContent, WizardButton } from "vue-form-wizard";
 import vue2Dropzone from "vue2-dropzone";
-import CKEditor from "@ckeditor/ckeditor5-vue";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-
-import "vue-form-wizard/dist/vue-form-wizard.min.css";
 
 /**
  * Product-create component
@@ -16,29 +11,23 @@ export default {
     };
   },
   components: {
-    FormWizard,
-    TabContent,
-    WizardButton,
     vueDropzone: vue2Dropzone,
-    ckeditor: CKEditor.component,
   },
   data() {
     return {
-      title: "Tạo bài viết",
+      title: "Tạo tài khoản",
       items: [
         {
           text: "My Mavin",
         },
         {
-          text: "Tin tức",
+          text: "Người dùng",
         },
         {
-          text: "Tạo bài viết",
+          text: "Tạo tài khoản",
           active: true,
         },
       ],
-      editor: ClassicEditor,
-      editorData: "<p>...</p>",
       dropzoneOptions: {
         url: "https://httpbin.org/post",
         thumbnailWidth: 150,
@@ -75,12 +64,6 @@ export default {
         </div>
         `;
     },
-    isLastStep() {
-      if (this.$refs.wizard) {
-        return this.$refs.wizard.isLastStep;
-      }
-      return false;
-    },
   },
   middleware: "router-auth",
 };
@@ -102,21 +85,46 @@ export default {
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group mb-3">
-                      <label for="product-name">
-                        Tiêu đề bài viết
+                      <label for="user-name">
+                        Tên tài khoản
+                        <span class="text-danger">*</span>
+                      </label>
+                      <input type="text" id="user-name" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group mb-3">
+                      <label for="user-type">
+                        Loại tài khoản
+                        <span class="text-danger">*</span>
+                      </label>
+                      <select class="form-control select2" id="user-type">
+                        <option>Lựa chọn</option>
+                        <option value="SH1">Admin cấp tập đoàn</option>
+                        <option value="SH2">Admin cấp đơn vị</option>
+                        <option value="SH3">Nhân viên</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group mb-3">
+                      <label for="user-password">
+                        Mật khẩu
                         <span class="text-danger">*</span>
                       </label>
                       <input
-                        type="text"
-                        id="product-name"
+                        type="password"
+                        id="user-password"
                         class="form-control"
                       />
                     </div>
                   </div>
                   <div class="col-lg-6">
-                    <div class="form-group mb-3">
+                    <!-- <div class="form-group mb-3">
                       <label for="product-category">
-                        Loại tin tức
+                        Loại tài khoản
                         <span class="text-danger">*</span>
                       </label>
                       <select
@@ -124,74 +132,42 @@ export default {
                         id="product-category"
                       >
                         <option>Lựa chọn</option>
-                        <option value="SH1">Cấp tập đoàn</option>
-                        <option value="SH2">Nội bộ cấp đơn vị</option>
-                        <option value="SH3">Tin chính thống bên ngoài</option>
+                        <option value="SH1">Admin cấp tập đoàn</option>
+                        <option value="SH2">Admin cấp đơn vị</option>
+                        <option value="SH3">Nhân viên</option>
                       </select>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
-                <div class="form-group mb-3">
-                  <label for="product-description">
-                    Nội dung
-                    <span class="text-danger">*</span>
-                  </label>
-                  <ckeditor v-model="editorData" :editor="editor"></ckeditor>
-                </div>
-
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group mb-3">
-                      <label for="product-summary">Nội dung tóm tắt</label>
-                      <textarea
-                        class="form-control"
-                        id="product-summary"
-                        rows="2"
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="form-group mb-3">
-                      <label for="product-category">
-                        Chủ đề
+                      <label for="name">
+                        Tên người dùng
                         <span class="text-danger">*</span>
                       </label>
-                      <select
-                        class="form-control select2"
-                        id="product-category"
-                      >
-                        <option>Lựa chọn</option>
-                        <optgroup label="Loại chủ đề 1">
-                          <option value="SH1">Chủ đề 1</option>
-                          <option value="SH2">Chủ đề 2</option>
-                          <option value="SH3">Chủ đề 3</option>
-                          <option value="SH4">Chủ đề 4</option>
-                        </optgroup>
-                        <optgroup label="Loại chủ đề 2">
-                          <option value="SH1">Chủ đề 1</option>
-                          <option value="SH2">Chủ đề 2</option>
-                          <option value="SH3">Chủ đề 3</option>
-                          <option value="SH4">Chủ đề 4</option>
-                        </optgroup>
-                      </select>
+                      <input type="text" id="name" class="form-control" />
                     </div>
                   </div>
                 </div>
-                <!-- <div class="form-group mb-0">
-                  <label>Comment</label>
-                  <textarea
-                    class="form-control"
-                    rows="3"
-                    placeholder="Please enter comment"
-                  ></textarea>
-                </div> -->
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group mb-3">
+                      <label for="email">
+                        Email
+                        <span class="text-danger">*</span>
+                      </label>
+                      <input type="text" id="email" class="form-control" />
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <ul class="pager wizard mb-0 list-inline text-right mt-3">
                 <li class="next list-inline-item"></li>
               </ul>
 
-              <h4 class="header-title">Ảnh chủ đề bài viết</h4>
+              <h4 class="header-title">Ảnh đại diện</h4>
               <p class="sub-header">Tải ảnh lên</p>
 
               <vue-dropzone
@@ -209,41 +185,6 @@ export default {
                   </span>
                 </div>
               </vue-dropzone>
-
-              <!-- <h4 class="header-title">Meta Data</h4>
-              <p class="sub-header">Fill all information below</p>
-
-              <form>
-                <div class="form-group mb-3">
-                  <label for="product-meta-title">Meta title</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="product-meta-title"
-                    placeholder="Enter title"
-                  />
-                </div>
-
-                <div class="form-group mb-3">
-                  <label for="product-meta-keywords">Meta Keywords</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="product-meta-keywords"
-                    placeholder="Enter keywords"
-                  />
-                </div>
-
-                <div class="form-group mb-0">
-                  <label for="product-meta-description">Meta Description</label>
-                  <textarea
-                    class="form-control"
-                    rows="5"
-                    id="product-meta-description"
-                    placeholder="Please enter description"
-                  ></textarea>
-                </div>
-              </form> -->
               <div class="form-group text-right m-b-0" style="margin-top: 20px">
                 <button class="btn btn-primary" type="submit">Đăng ký</button>
               </div>
